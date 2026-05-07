@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Jesus Christian Fellowship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #1C252E;
+            --champagne: #D9C5B2;
+            --moss: #3D4F3F;
+            --onyx: #0F0F0F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--midnight);
+            color: var(--champagne);
+            font-family: 'Open Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section with Slanted Division */
+        #home {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 100vh;
+            align-items: center;
+            background-color: var(--midnight);
+        }
+
+        .hero-text {
+            padding: 0 10% 0 15%;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Image Container for Zoomed Fill + Slanted Edge */
+        .image-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .group-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Zooms in to fill the slanted area */
+            display: block;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 120px;
+            background: rgba(28, 37, 46, 0.9);
+            padding: 8px;
+            border-radius: 50%;
+            border: 2px solid var(--champagne);
+            z-index: 3;
+        }
+
+        /* Embossed Even-Sized Button */
+        .btn {
+            display: inline-block;
+            width: 280px; 
+            text-align: center;
+            padding: 16px;
+            background: var(--moss);
+            color: var(--champagne);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: inset 1px 1px 2px rgba(255,255,255,0.2), 
+                        inset -2px -2px 4px rgba(0,0,0,0.5),
+                        0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn:hover {
+            background: #4a5e4d;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: inset -1px -1px 2px rgba(255,255,255,0.2), 
+                        inset 2px 2px 4px rgba(0,0,0,0.5);
+            transform: translateY(1px);
+        }
+
+        /* Leaders Section */
+        #leaders {
+            padding: 100px 10%;
+            background: var(--onyx);
+        }
+
+        .leader-card {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .leader-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 4px;
+            border: 2px solid var(--moss);
+            object-fit: cover;
+        }
+
+        /* Connect Section */
+        #connect {
+            padding: 100px 10%;
+            text-align: center;
+            background: var(--midnight);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        /* Icons and Labels for Facebook/Contact */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: var(--champagne);
+            border: 1px solid var(--moss);
+            padding: 12px 30px;
+            border-radius: 50px;
+            width: 320px;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            background: var(--moss);
+        }
+
+        /* Responsive Fix for Mobile */
+        @media (max-width: 900px) {
+            #home { grid-template-columns: 1fr; }
+            .image-container { clip-path: none; height: 400px; }
+            .hero-text { padding: 60px 5%; text-align: center; }
+            .leader-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="home">
+        <div class="hero-text">
+            <h1>KING JESUS<br>CHRISTIAN FELLOWSHIP</h1>
+            <p>"Knit together in Love" - Colossians 2:2</p>
+            <a href="https://maps.app.goo.gl/bp84f1r95ANi22MG6" target="_blank" class="btn">SEE IN GOOGLE MAPS</a>
+        </div>
+
+        <div class="image-container">
+            <img src="group-photo.jpg" alt="The Family" class="group-photo">
+            <img src="logo.png" alt="Church Logo" class="logo-overlay">
+        </div>
+    </section>
+
+    <section id="leaders">
+        <h2 style="margin-bottom: 60px; color: var(--moss); border-bottom: 1px solid var(--moss); display: inline-block;">CHURCH LEADERS</h2>
+        
+        <div class="leader-card">
+            <img src="pastor-romel.jpg" class="leader-img" alt="Romel">
+            <div>
+                <h3>EVANGELIST ROMEL D. SALDALIGA</h3>
+                <p>Head Pastor of KJCF CDO</p>
+                <p><small style="color: var(--moss)">District Supervisor of Cagayan and Bukidnon District</small></p>
+            </div>
+        </div>
+
+        <div class="leader-card">
+            <img src="pastor-edita.jpg" class="leader-img" alt="Edita">
+            <div>
+                <h3>PASTOR EDITA P. SALDALIGA</h3>
+                <p>Co-Head Pastor of KJCF CDO</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect">
+        <h2>CONNECT WITH US</h2>
+        <div class="contact-details">
+            <a href="https://www.facebook.com/profile.php?id=100094358471374" target="_blank" class="contact-item">
+                <i class="fab fa-facebook"></i> KJCF CDO
+            </a>
+            <a href="tel:09654613628" class="contact-item">
+                <i class="fas fa-phone"></i> 09654613628
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>
